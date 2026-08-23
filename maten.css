@@ -160,6 +160,15 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .infobox dl div { border-top: 1px solid var(--line); display: grid; gap: 10px; grid-template-columns: 90px 1fr; padding: 10px 0; }
 .infobox dt { color: var(--muted); font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; }
 .infobox dd { font-size: 13px; margin: 0; }
+.infobox dd a { color: #704923; text-decoration: underline; text-decoration-color: rgba(112, 73, 35, 0.34); text-underline-offset: 3px; }
+
+.article-hero { background: rgba(255, 253, 246, 0.62); border: 1px solid var(--line-dark); margin: 28px 0 0; padding: 10px; }
+.article-hero img { border: 1px solid #746247; display: block; height: auto; width: 100%; }
+.article-hero figcaption { background: rgba(116, 83, 45, 0.08); color: var(--muted); font-size: 12px; letter-spacing: 0.04em; margin-top: 9px; padding: 10px 12px; text-align: center; }
+.article-illustration { margin-top: 34px; }
+.symbol-infobox img { background: radial-gradient(circle, rgba(255, 248, 218, 0.9), rgba(214, 181, 112, 0.24)); }
+.symbol-infobox dl div { display: block; }
+.symbol-infobox dt { margin-bottom: 5px; }
 
 .wiki-footer { align-items: center; background: rgba(12, 14, 17, 0.91); border-top: 1px solid rgba(226, 209, 165, 0.28); color: #9f9582; display: flex; gap: 12px; justify-content: center; padding: 24px; }
 .wiki-footer p { font-family: Arial, sans-serif; font-size: 9px; letter-spacing: 0.18em; margin: 0; text-transform: uppercase; }
