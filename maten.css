@@ -216,3 +216,9 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+
+/* maten-article-studio */
+.studio-infobox dl div { display: block; }
+.studio-infobox dt { margin-bottom: 5px; }
+.article-copy-wide { margin-top: 26px; }
