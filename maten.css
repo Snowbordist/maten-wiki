@@ -195,7 +195,7 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   .archive-label { text-align: right; }
   .wiki-shell { display: block; margin-top: 24px; }
   .wiki-sidebar { margin-bottom: 14px; position: static; }
-  .sidebar-card { display: grid; grid-template-columns: repeat(7, minmax(max-content, 1fr)); overflow-x: auto; }
+  .sidebar-card { display: grid; grid-template-columns: repeat(8, minmax(max-content, 1fr)); overflow-x: auto; }
   .sidebar-title, .sidebar-note { display: none; }
   .sidebar-card a { border-bottom: 2px solid transparent; border-left: 0; justify-content: center; }
   .sidebar-card a.is-active { border-bottom-color: var(--gold); border-left: 0; }
@@ -211,7 +211,7 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   .portal-grid, .home-columns, .article-layout, .character-grid { grid-template-columns: 1fr; }
   .article-layout .infobox { grid-row: 1; margin: 0 auto; max-width: 380px; }
   .article-layout .text-infobox { grid-row: 1; position: static; }
-  .sidebar-card { grid-template-columns: repeat(7, max-content); justify-content: start; }
+  .sidebar-card { grid-template-columns: repeat(8, max-content); justify-content: start; }
   .sidebar-card a { font-size: 13px; }
 }
 @media (max-width: 460px) {
