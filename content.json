@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "revision": "cb05fc96-d63f-4111-bdf5-abcf8beda8e8",
+  "revision": "c7c45225-7582-497d-9813-bdac9156dac5",
   "articles": [
     {
       "id": "personazhi/mirena-voss",
@@ -807,8 +807,9 @@
       "date": "",
       "summary": "",
       "participants": [],
-      "bodyHtml": "<figure class=\"chronicle-entry chronicle-entry-image\" data-chronicle-block=\"image\"><img src=\"/maten-wiki/letopis-20260908-234204-229-7.png\" alt=\"Иллюстрация из летописи кампании\" width=\"2117\" height=\"743\"></figure>\n",
-      "markdown": null
+      "bodyHtml": "<figure><img src=\"/maten-wiki/media/27e935db-e30d-4521-a634-de5c00b129d0.webp\" alt=\"Иллюстрация\"><figcaption></figcaption></figure><p><br></p>",
+      "markdown": null,
+      "updated": "2026-10-04T19:09:29.870Z"
     },
     {
       "id": "session-2",
