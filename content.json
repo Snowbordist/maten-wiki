@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "revision": "c7c45225-7582-497d-9813-bdac9156dac5",
+  "revision": "42517703-050e-44bb-8175-918fc2f94883",
   "articles": [
     {
       "id": "personazhi/mirena-voss",
@@ -807,9 +807,9 @@
       "date": "",
       "summary": "",
       "participants": [],
-      "bodyHtml": "<figure><img src=\"/maten-wiki/media/27e935db-e30d-4521-a634-de5c00b129d0.webp\" alt=\"Иллюстрация\"><figcaption></figcaption></figure><p><br></p>",
+      "bodyHtml": "<figure><figure><img src=\"/maten-wiki/media/27e935db-e30d-4521-a634-de5c00b129d0.webp\" alt=\"Иллюстрация\" style=\"text-align: center;\"></figure><figcaption></figcaption></figure><p style=\"text-align: center;\"><br></p>",
       "markdown": null,
-      "updated": "2026-10-04T19:09:29.870Z"
+      "updated": "2026-10-04T19:11:29.555Z"
     },
     {
       "id": "session-2",
