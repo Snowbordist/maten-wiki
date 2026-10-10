@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "revision": "152f3990-1f3d-4973-a6aa-d6673897f008",
+  "revision": "958ef081-e9f8-42cd-8c5b-1d7c9ee27154",
   "articles": [
     {
       "id": "mir/korolevstvo-elmariya",
@@ -868,5 +868,8 @@
       "markdown": null
     }
   ],
-  "wikiId": "maten-campaign"
+  "wikiId": "maten-campaign",
+  "mapLinks": {
+    "settlement-22": "mir/sil-ford"
+  }
 }
