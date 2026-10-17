@@ -15,3 +15,19 @@ body.atlas:has(.constellation){background:#0c1215}body.atlas:has(.constellation)
 @media(prefers-reduced-motion:reduce){.star-toolbar button{transition:none}}
 .star-node.minor .node-label{display:none}.star-node.minor:hover .node-label,.star-node.minor:focus .node-label{display:block}.star-node.minor .node-orbit{stroke-width:8;stroke:transparent;opacity:1}
 .star-hint{grid-column:1;grid-row:2;margin:0;color:#999b91;font:11px/1.6 Arial,sans-serif}.star-detail{grid-column:2;grid-row:1 / span 2}.star-node image{pointer-events:none}.star-node:focus .node-rim{stroke:#ffe4a0;stroke-width:3}@media(max-width:760px){.star-detail{grid-column:1;grid-row:3}.star-hint{grid-row:2}}
+/* Slow ambient motion; interaction and reduced-motion preferences take priority. */
+.sky-dust{pointer-events:none;animation:star-spark var(--spark-duration,8s) ease-in-out var(--spark-delay,0s) infinite alternate;filter:drop-shadow(0 0 3px #f6d68c)}
+.star-node.selected .node-orbit{animation:star-halo 5s ease-in-out infinite alternate}
+@keyframes star-spark{0%{opacity:.12;transform:translate(0,0)}55%{opacity:.5}100%{opacity:.85;transform:translate(2px,-5px)}}
+@keyframes star-halo{from{opacity:.35}to{opacity:.95}}
+.motion-off .sky-dust,.motion-off .node-orbit{animation:none}
+.star-controls button[aria-pressed=true]{border-color:#d4b778;color:#eed6a0}
+@media(prefers-reduced-motion:reduce){.sky-dust,.star-node.selected .node-orbit{animation:none}}
+/* Warm fireflies: purely decorative, behind the interactive constellation. */
+.star-fireflies{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.star-canvas svg{position:relative;z-index:1}.star-controls{z-index:2}
+.star-fireflies i{position:absolute;display:block;width:var(--fly-size);height:var(--fly-size);border-radius:50%;background:#fff2b5;box-shadow:0 0 5px 2px #f7db86aa,0 0 15px 5px #e8ba4d55,0 0 30px 8px #e9bb2922;opacity:0;animation:firefly-flight var(--fly-time) ease-in-out var(--fly-delay) infinite alternate,firefly-light var(--glow-time) ease-in-out var(--fly-delay) infinite}
+@keyframes firefly-flight{0%{transform:translate(0,12px)}40%{transform:translate(calc(var(--fly-x) * -.45),calc(var(--fly-y) * .4))}100%{transform:translate(var(--fly-x),var(--fly-y))}}
+@keyframes firefly-light{0%,100%{opacity:.04}35%{opacity:.35}55%{opacity:.9}75%{opacity:.25}}
+.motion-off .star-fireflies i{animation-play-state:paused;opacity:.15}
+@media(prefers-reduced-motion:reduce){.star-fireflies i{animation:none;opacity:.12}}

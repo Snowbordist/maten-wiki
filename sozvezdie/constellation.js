@@ -3,8 +3,25 @@ const root=document.querySelector('.constellation');if(!root)return;
 const NS='http://www.w3.org/2000/svg',base='/maten-wiki/';
 const sections={mir:'Мир',personazhi:'Персонажи',fraktsii:'Фракции',bogi:'Боги',sushchestva:'Существа',artefakty:'Артефакты'},symbols={mir:'◇',personazhi:'♙',fraktsii:'⚑',bogi:'✦',sushchestva:'♞',artefakty:'◈'};
 const svg=root.querySelector('svg'),scene=svg.querySelector('g'),detail=root.querySelector('.star-detail'),status=root.querySelector('.star-status'),toolbar=root.querySelector('.star-toolbar'),search=root.querySelector('input');
+// Decorative fireflies live outside the graph, so panning never moves them or intercepts clicks.
+const fireflies=document.createElement('div');fireflies.className='star-fireflies';fireflies.setAttribute('aria-hidden','true');
+for(let i=0;i<22;i++){const dot=document.createElement('i');const size=2+i%3;dot.style.cssText=`left:${4+(i*37.7)%92}%;top:${6+(i*23.3)%86}%;--fly-size:${size}px;--fly-time:${13+i%9}s;--fly-delay:-${i*2.37}s;--fly-x:${i%2?22:-27}px;--fly-y:${-25-i%5*9}px;--glow-time:${4.5+i%5}s`;fireflies.append(dot);}
+root.querySelector('.star-canvas').prepend(fireflies);
 const hint=document.createElement('p');hint.className='star-hint';hint.textContent='Большие узлы — открытые истории. Маленькие звёзды тоже можно выбрать: статья развернётся в центре.';root.querySelector('.star-canvas').after(hint);
 let articles=[],edges=[],selected='',filter='',query='',zoom=1,pan={x:0,y:0};
+// One clock moves nodes and their line endpoints together. No layout reads per frame.
+const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+let motionItems=[],motionFrame=0,motionTime=0,lastFrame=0,motionPaused=false,pointerOverNode=false;
+const motionButton=document.createElement('button');motionButton.type='button';motionButton.textContent='Оживление';motionButton.setAttribute('aria-label','Анимация созвездия');
+root.querySelector('.star-controls').append(motionButton);
+function motionEnabled(){return !motionPaused&&!motionPreference.matches;}
+function drift(x,y){const phase=x*.013+y*.021;return [x+Math.sin(motionTime*.38+phase)*3.5,y+Math.cos(motionTime*.29+phase)*4.5];}
+function paintMotion(still=false){for(const item of motionItems){if(item.node){const p=still?[item.x,item.y]:drift(item.x,item.y);item.el.setAttribute('transform',`translate(${p[0]} ${p[1]})`);}else{const p=still?[item.x,item.y]:drift(item.x,item.y),q=still?[item.x2,item.y2]:drift(item.x2,item.y2);for(const[k,v]of Object.entries({x1:p[0],y1:p[1],x2:q[0],y2:q[1]}))item.el.setAttribute(k,v);}}}
+function tickMotion(now){motionFrame=0;if(!motionEnabled()||document.hidden)return;if(!pointerOverNode&&!svg.contains(document.activeElement)&&!drag){motionTime+=Math.min((now-lastFrame)/1000,.05);paintMotion();}lastFrame=now;motionFrame=requestAnimationFrame(tickMotion);}
+function syncMotion(){cancelAnimationFrame(motionFrame);motionFrame=0;lastFrame=performance.now();root.classList.toggle('motion-off',!motionEnabled()||document.hidden);motionButton.setAttribute('aria-pressed',String(motionEnabled()));motionButton.disabled=motionPreference.matches;if(!motionEnabled())paintMotion(true);if(motionEnabled()&&!document.hidden)motionFrame=requestAnimationFrame(tickMotion);}
+function bindMotion(){motionItems=[];scene.querySelectorAll('.star-node').forEach(el=>{const m=el.getAttribute('transform').match(/translate\(([-\d.]+) ([-\d.]+)\)/);if(m)motionItems.push({el,node:true,x:+m[1],y:+m[2]});});scene.querySelectorAll('.star-edge,.star-membership').forEach(el=>motionItems.push({el,x:+el.getAttribute('x1'),y:+el.getAttribute('y1'),x2:+el.getAttribute('x2'),y2:+el.getAttribute('y2')}));scene.querySelectorAll('.sky-dust').forEach((el,i)=>el.style.cssText=`--spark-duration:${5+i%7}s;--spark-delay:-${i*.71}s`);syncMotion();}
+motionButton.onclick=()=>{motionPaused=!motionPaused;syncMotion();};motionPreference.addEventListener('change',syncMotion);document.addEventListener('visibilitychange',syncMotion);
+svg.addEventListener('pointerover',e=>{pointerOverNode=!!e.target.closest('.star-node');});svg.addEventListener('pointerleave',()=>pointerOverNode=false);
 function el(tag,attrs={},parent=scene){const n=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);parent.append(n);return n;}
 function html(tag,text,parent=detail){const n=document.createElement(tag);n.textContent=text;parent.append(n);return n;}
 const norm=s=>s.toLocaleLowerCase('ru').replace(/ё/g,'е');
@@ -27,7 +44,7 @@ el('circle',{r:r+5,class:'node-orbit'},g);el('circle',{r,class:'node-rim'},g);co
 if(!minor&&img?.src&&/^(\/maten-wiki\/|https?:\/\/)/.test(img.src)){const clipId='portrait-'+count++,clip=el('clipPath',{id:clipId},defs);el('circle',{r:r-3},clip);el('image',{href:img.src,x:3-r,y:3-r,width:(r-3)*2,height:(r-3)*2,preserveAspectRatio:'xMidYMid slice','clip-path':'url(#'+clipId+')'},g);}else if(!minor)el('text',{y:9,class:'star-symbol'},g).textContent=symbols[a.section]||'✦';
 const label=el('g',{class:'node-label'},g),words=a.title.split(' '),lines=[];let line='';for(const word of words){if((line+' '+word).length>24&&line){lines.push(line);line=word;}else line+=(line?' ':'')+word;}lines.push(line);const width=Math.min(210,Math.max(...lines.map(l=>l.length))*7.1+22);el('rect',{x:-width/2,y:r+10,width,height:lines.length*17+12,rx:4},label);lines.forEach((line,i)=>el('text',{y:r+28+i*17},label).textContent=line);
 g.onclick=()=>select(id);g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(id);}};}
-transform();}
+transform();bindMotion();}
 for(const[key,label]of [['','Все'],...Object.entries(sections)]){const b=document.createElement('button');b.type='button';b.dataset.section=key;b.textContent=label;b.onclick=()=>{filter=key;sync();reset();render();};toolbar.insertBefore(b,search);}sync();search.oninput=()=>{query=norm(search.value.trim());render();};
 root.querySelectorAll('[data-zoom]').forEach(b=>b.onclick=()=>{if(b.dataset.zoom==='reset')reset();else{zoom=Math.min(2.8,Math.max(.6,zoom*Number(b.dataset.zoom)));transform();}});
 let drag;svg.addEventListener('pointerdown',e=>{if(e.target.closest('.star-node'))return;drag={x:e.clientX,y:e.clientY,px:pan.x,py:pan.y};svg.setPointerCapture(e.pointerId);});svg.addEventListener('pointermove',e=>{if(!drag)return;const scale=900/svg.getBoundingClientRect().width;pan={x:drag.px+(e.clientX-drag.x)*scale,y:drag.py+(e.clientY-drag.y)*scale};transform();});for(const type of ['pointerup','pointercancel'])svg.addEventListener(type,()=>drag=null);
