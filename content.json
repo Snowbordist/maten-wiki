@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "revision": "4b4b7855-a40c-46f1-8f7b-eb1f4872a5d8",
+  "revision": "fa155791-c828-4948-b4c1-7adb9dec61ac",
   "articles": [
     {
       "id": "personazhi/ergon",
@@ -44,7 +44,7 @@
           "position": 0
         }
       ],
-      "updated": "2026-11-07T17:52:24.553Z"
+      "updated": "2026-11-07T17:57:21.363Z"
     },
     {
       "id": "personazhi/eneliya",
@@ -85,10 +85,10 @@
           "role": "card",
           "caption": "",
           "alt": "Иллюстрация",
-          "position": 50
+          "position": 0
         }
       ],
-      "updated": "2026-11-07T17:28:51.798Z"
+      "updated": "2026-11-07T17:57:11.703Z"
     },
     {
       "id": "personazhi/hopfen-fon-ungeflyugelts",
@@ -132,7 +132,7 @@
           "position": 0
         }
       ],
-      "updated": "2026-11-07T17:17:43.334Z"
+      "updated": "2026-11-07T17:57:00.053Z"
     },
     {
       "id": "personazhi/astrid",
@@ -173,10 +173,10 @@
           "role": "card",
           "caption": "",
           "alt": "Иллюстрация",
-          "position": 50
+          "position": 0
         }
       ],
-      "updated": "2026-11-07T17:08:37.771Z"
+      "updated": "2026-11-07T17:56:50.243Z"
     },
     {
       "id": "personazhi/tant-belyy-kogot",
@@ -217,10 +217,10 @@
           "role": "card",
           "caption": "",
           "alt": "Иллюстрация",
-          "position": 50
+          "position": 0
         }
       ],
-      "updated": "2026-11-07T16:55:51.915Z"
+      "updated": "2026-11-07T17:56:37.057Z"
     },
     {
       "id": "personazhi/lirik-aneudalas",
@@ -261,10 +261,10 @@
           "role": "card",
           "caption": "",
           "alt": "Иллюстрация",
-          "position": 50
+          "position": 0
         }
       ],
-      "updated": "2026-11-07T17:00:48.355Z"
+      "updated": "2026-11-07T17:56:21.886Z"
     },
     {
       "id": "personazhi/sil-akvi",
@@ -305,10 +305,10 @@
           "role": "card",
           "caption": "",
           "alt": "Иллюстрация",
-          "position": 50
+          "position": 0
         }
       ],
-      "updated": "2026-11-07T17:01:54.899Z"
+      "updated": "2026-11-07T17:56:09.613Z"
     },
     {
       "id": "personazhi/farisk",
@@ -349,10 +349,10 @@
           "role": "card",
           "caption": "",
           "alt": "Иллюстрация",
-          "position": 50
+          "position": 0
         }
       ],
-      "updated": "2026-11-07T17:02:35.936Z"
+      "updated": "2026-11-07T17:55:49.671Z"
     },
     {
       "id": "mir/kasty-i-sozidateli-kragmara",
