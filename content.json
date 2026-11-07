@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "revision": "1ea80805-8d44-4288-a41d-df79e8f38464",
+  "revision": "7eaecff5-7bde-438e-809d-51d6c8d7d369",
   "articles": [
     {
       "id": "personazhi/tant-belyy-kogot",
@@ -60,19 +60,23 @@
       "facts": [
         {
           "label": "Раса",
-          "value": ""
+          "value": "Полуэльф"
         },
         {
           "label": "Фракция",
-          "value": ""
+          "value": "???"
         },
         {
           "label": "Местоположение",
-          "value": ""
+          "value": "Сил'Форд"
         },
         {
           "label": "Статус",
-          "value": ""
+          "value": "Жив"
+        },
+        {
+          "label": "Количество разбитых сердец",
+          "value": "Растёт"
         }
       ],
       "images": [
@@ -84,7 +88,7 @@
           "position": 50
         }
       ],
-      "updated": "2026-11-07T16:45:53.121Z"
+      "updated": "2026-11-07T17:00:48.355Z"
     },
     {
       "id": "personazhi/sil-akvi",
@@ -113,6 +117,10 @@
         {
           "label": "Статус",
           "value": "Жива"
+        },
+        {
+          "label": "Количество пойманых изгоев со сломанными лицами",
+          "value": "Растёт"
         }
       ],
       "images": [
@@ -124,7 +132,7 @@
           "position": 50
         }
       ],
-      "updated": "2026-11-07T16:35:42.742Z"
+      "updated": "2026-11-07T17:01:54.899Z"
     },
     {
       "id": "personazhi/farisk",
@@ -153,6 +161,10 @@
         {
           "label": "Статус",
           "value": "Неизвестно"
+        },
+        {
+          "label": "Количество непознанного в мире",
+          "value": "Сокращается"
         }
       ],
       "images": [
@@ -164,7 +176,7 @@
           "position": 50
         }
       ],
-      "updated": "2026-11-07T16:50:12.139Z"
+      "updated": "2026-11-07T17:02:35.936Z"
     },
     {
       "id": "mir/kasty-i-sozidateli-kragmara",
