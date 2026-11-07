@@ -1,7 +1,171 @@
 {
   "version": 2,
-  "revision": "6ab37d03-37c7-4392-ad91-b9e140eed08f",
+  "revision": "1ea80805-8d44-4288-a41d-df79e8f38464",
   "articles": [
+    {
+      "id": "personazhi/tant-belyy-kogot",
+      "section": "personazhi",
+      "slug": "tant-belyy-kogot",
+      "title": "Тант Белый Коготь",
+      "summary": "Те, кто меняют Мир",
+      "category": "",
+      "aliases": [],
+      "related": [],
+      "markdown": null,
+      "bodyHtml": "Суровый воин, закалённый несладкой жизнью и тренировками Кровавых охотников, Тант, прибыл в&nbsp;<a href=\"/maten-wiki/mir/sil-ford/\">Сил'Форд</a>&nbsp;по велению собственного ордена. Широкая дорога приключений привела его в Пик Туманных помыслов и позволила выйти оттуда живым.&nbsp;<br>В настоящее время он готов встретить свою судьбу на вершине башни Магов в&nbsp;<a href=\"/maten-wiki/mir/sil-ford/\">Сил'Форде</a>",
+      "facts": [
+        {
+          "label": "Раса",
+          "value": "Табакси"
+        },
+        {
+          "label": "Фракция",
+          "value": "Кровавые охотники"
+        },
+        {
+          "label": "Местоположение",
+          "value": "Сил'Форд"
+        },
+        {
+          "label": "Статус",
+          "value": "Жив"
+        },
+        {
+          "label": "Количество личных врагов",
+          "value": "Увеличивается"
+        }
+      ],
+      "images": [
+        {
+          "src": "/maten-wiki/media/4c9f1308-8122-466c-ba5b-b70c4118ff63.webp",
+          "role": "card",
+          "caption": "",
+          "alt": "Иллюстрация",
+          "position": 50
+        }
+      ],
+      "updated": "2026-11-07T16:55:51.915Z"
+    },
+    {
+      "id": "personazhi/lirik-aneudalas",
+      "section": "personazhi",
+      "slug": "lirik-aneudalas",
+      "title": "Лирик Анеудалас",
+      "summary": "Те, кто меняют Мир",
+      "category": "",
+      "aliases": [],
+      "related": [],
+      "markdown": null,
+      "bodyHtml": "Золотой голос&nbsp;<a href=\"/maten-wiki/mir/korolevstvo-elmariya/\">Эльмарии&nbsp;</a>и&nbsp;<a href=\"/maten-wiki/mir/lunnaya-konfederatsiya-selindar/\">Селиндара</a>, легенда всех таверн, звезда королевских балов. Когда у тебя прадед - легендарный бард двух континентов, род твоих занятий определён с самого рождения.<br>Лирик присоединился к группе в&nbsp;<a href=\"/maten-wiki/mir/sil-ford/\">Сил'Форде</a>, в поисках родовой тайны. После всех приключений, выпавших на его долю, Лирик встречает свою судьбу на вершине башни Магов.",
+      "facts": [
+        {
+          "label": "Раса",
+          "value": ""
+        },
+        {
+          "label": "Фракция",
+          "value": ""
+        },
+        {
+          "label": "Местоположение",
+          "value": ""
+        },
+        {
+          "label": "Статус",
+          "value": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "/maten-wiki/media/44b31091-d592-40d8-b8f0-b7a0bf8d91e4.webp",
+          "role": "card",
+          "caption": "",
+          "alt": "Иллюстрация",
+          "position": 50
+        }
+      ],
+      "updated": "2026-11-07T16:45:53.121Z"
+    },
+    {
+      "id": "personazhi/sil-akvi",
+      "section": "personazhi",
+      "slug": "sil-akvi",
+      "title": "Сил'Акви",
+      "summary": "Те, кто меняют Мир",
+      "category": "",
+      "aliases": [],
+      "related": [],
+      "markdown": null,
+      "bodyHtml": "<p>Суровая воительница народа Дроу, Сил'Акви прибыла в&nbsp;<a href=\"/maten-wiki/mir/sil-ford/\">Сил'Форд</a>, вместе со своим ручным дрейком по указу главы Дома Вель’Тарис. Уверенная и верная принципам своего народа, она направилась вместе с группой в пик Туманных Помыслов, и вернулась в Сил'Форд вместе с легендарным артефактом - осколком. В настоящее время вместе с группой на вершине башни Магов Сил'Форда - она готова встретить свою судьбу</p><!--EndFragment-->",
+      "facts": [
+        {
+          "label": "Раса",
+          "value": "Дроу"
+        },
+        {
+          "label": "Фракция",
+          "value": "???"
+        },
+        {
+          "label": "Местоположение",
+          "value": "Сил'Форд"
+        },
+        {
+          "label": "Статус",
+          "value": "Жива"
+        }
+      ],
+      "images": [
+        {
+          "src": "/maten-wiki/media/f3a8a300-e7b5-46c4-9e50-245aab395c6a.webp",
+          "role": "card",
+          "caption": "",
+          "alt": "Иллюстрация",
+          "position": 50
+        }
+      ],
+      "updated": "2026-11-07T16:35:42.742Z"
+    },
+    {
+      "id": "personazhi/farisk",
+      "section": "personazhi",
+      "slug": "farisk",
+      "title": "Фариск",
+      "summary": "Те, кто меняют Мир",
+      "category": "",
+      "aliases": [],
+      "related": [],
+      "markdown": null,
+      "bodyHtml": "<p>Диковинка расколотого континента. Абориген этого мира, предков которого уничтожил&nbsp;<a href=\"/maten-wiki/personazhi/bezlikiy/\">Безликий</a>, чтобы создать армию&nbsp;<a href=\"/maten-wiki/sushchestva/eydol/\">Эйдолов</a>, выглядит гораздо моложе чем есть на самом деле. Наделённый редким ныне даром магии, Фариск присоединился к команде в таверне \"Меж континентов\", чтобы отправится в экспедицию в Пик Туманных помыслов. Вместе с командой он прошёл путь от Пика до&nbsp;<a href=\"/maten-wiki/mir/sil-ford/\">Сил'Форда</a>, где в момент активации Маски, его Бог и покровитель&nbsp;<a href=\"/maten-wiki/bogi/ur-kalet/\">Ур-Калет</a>&nbsp;попросил его пожертвовать своей энергией, чтобы дать возможность его друзьям предотвратить конец мира. В настоящее время его судьба остаётся неизвестной</p>",
+      "facts": [
+        {
+          "label": "Раса",
+          "value": "Мотылёк"
+        },
+        {
+          "label": "Фракция",
+          "value": "???"
+        },
+        {
+          "label": "Местоположение",
+          "value": "Неизвестно"
+        },
+        {
+          "label": "Статус",
+          "value": "Неизвестно"
+        }
+      ],
+      "images": [
+        {
+          "src": "/maten-wiki/media/6bc1fa32-f78b-442d-8b25-4eee8e404f23.webp",
+          "role": "card",
+          "caption": "",
+          "alt": "Иллюстрация",
+          "position": 50
+        }
+      ],
+      "updated": "2026-11-07T16:50:12.139Z"
+    },
     {
       "id": "mir/kasty-i-sozidateli-kragmara",
       "section": "mir",
