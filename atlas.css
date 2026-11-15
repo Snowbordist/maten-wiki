@@ -1,4 +1,9 @@
 /* Atlas v2: layout shared by the site and the Studio preview. */
+/* Opening chronicle cover: center across the page, preserving image proportions. */
+.atlas #session-1 > .article-copy { max-width: none; }
+.atlas #session-1 > .article-copy figure { margin: 0; }
+.atlas #session-1 > .article-copy figure img { display: block; width: 90%; max-width: 900px; height: auto; margin: 0 auto; }
+@media (max-width: 720px) { .atlas #session-1 > .article-copy figure img { width: 100%; } }
 .atlas { --paper:#f5f0e5; --ink:#302c25; background-attachment:fixed; }
 .atlas button,.atlas input {font:inherit}
 .atlas button {cursor:pointer}
