@@ -45,7 +45,7 @@ kbd {font:12px Arial,sans-serif;border:1px solid #c8bda866;border-radius:3px;pad
   isolation: isolate;
   display: grid;
   grid-template-rows: 1fr auto;
-  min-height: clamp(440px, 53vw, 820px);
+  aspect-ratio: 1672 / 941;
   color: #f6e9d2;
   background: #15212b;
 }
@@ -55,7 +55,7 @@ kbd {font:12px Arial,sans-serif;border:1px solid #c8bda866;border-radius:3px;pad
   z-index: -2;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .home-cover::after {
   content: '';
@@ -171,8 +171,14 @@ kbd {font:12px Arial,sans-serif;border:1px solid #c8bda866;border-radius:3px;pad
 .atlas.chronicle-surface .session .article-copy img { width: 100%; height: auto; }
 .atlas .session-neighbors { justify-content: space-between; border-top: 1px solid #d5c6ac; margin-top: 20px; }
 @media (max-width: 650px) {
-  .home-cover { min-height: 420px; }
-  .home-cover-art { object-position: center; }
+  .home-cover { aspect-ratio: auto; grid-template-rows: auto auto; }
+  .home-cover-art {
+    position: static;
+    grid-area: 1 / 1;
+    height: auto;
+  }
+  .home-cover::after { position: relative; grid-area: 1 / 1; }
+  .home-cover-title { grid-area: 1 / 1; padding-block: 0; }
   .home-cover-nav { column-gap: 5px; }
   .character-gallery { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
