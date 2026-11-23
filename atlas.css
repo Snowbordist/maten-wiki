@@ -27,3 +27,256 @@ kbd {font:12px Arial,sans-serif;border:1px solid #c8bda866;border-radius:3px;pad
 @media(max-width:1150px){.atlas .wiki-shell{gap:20px;grid-template-columns:170px minmax(0,1fr);padding:0 20px}.atlas .wiki-page{padding:30px}.atlas .article-layout{grid-template-columns:minmax(0,1fr) 210px;gap:22px}.atlas-header{gap:24px}.header-chronicle{font-size:12px}.card-grid{gap:12px}.atlas-card{grid-template-columns:90px minmax(0,1fr)}.atlas-card-copy{padding:15px}.atlas-card-copy strong{font-size:19px}}
 @media(max-width:940px){.atlas-header{padding:14px 22px;flex-wrap:wrap;gap:14px;position:relative}.atlas .wiki-sidebar{display:none}.atlas .wiki-shell{display:block;margin-top:20px}.atlas .wiki-brand{margin-right:auto}.header-chronicle{display:none}.mobile-menu{display:block;order:2}.mobile-menu summary{padding:12px;cursor:pointer;font:14px Arial,sans-serif}.mobile-menu nav{position:absolute;right:20px;top:77px;z-index:35;background:#1d2425;padding:14px;min-width:220px;box-shadow:0 10px 30px #0007}.mobile-menu nav a{display:block;padding:12px}.mobile-menu nav span{display:inline-block;width:25px;color:#c5a568}.search-trigger{width:300px;margin-left:auto}.atlas .wiki-page{padding:35px}.atlas [id]{scroll-margin-top:20px}}
 @media(max-width:720px){.atlas{background-attachment:scroll}.atlas-header{padding:14px 18px}.atlas .wiki-brand{min-width:0}.atlas .wiki-brand strong{font-size:23px}.atlas .wiki-brand small{display:block;font-size:9px}.search-trigger{order:3;width:100%;padding:12px 14px}.atlas .wiki-shell{padding:0 10px;margin-top:12px}.atlas .wiki-page{padding:24px 22px 40px}.atlas-intro{padding:10px 0 28px}.atlas-intro h1{font-size:38px}.atlas-intro>p:not(.page-kicker){font-size:16px}.atlas .portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas .portal-card{grid-template-columns:1fr auto;min-height:95px}.atlas .portal-symbol{display:none}.atlas .section-title-row{align-items:center;gap:12px}.atlas .section-title-row small{display:none}.atlas .section-title-row h2{font-size:25px}.card-grid{grid-template-columns:1fr}.atlas-card{grid-template-columns:100px minmax(0,1fr);min-height:155px}.atlas-card>img{min-height:155px;max-height:220px}.atlas-card-copy strong{font-size:22px}.atlas-card-copy{padding:18px}.atlas .article-layout{display:flex;flex-direction:column;gap:24px}.article-main{width:100%}.article-facts{order:-1;width:100%}.article-facts>img{max-height:320px}.atlas .article-copy p{font-size:17px;line-height:1.75}.atlas .page-heading h1{font-size:34px}.latest-session{padding:22px}.latest-session h2{font-size:28px}.atlas-button{gap:25px;font-size:15px}.directory>a{align-items:flex-start;flex-direction:column;gap:5px}.atlas .wiki-footer p{font-size:9px;line-height:1.6;text-align:center}.atlas dialog{padding:20px}.session>header>h2{font-size:29px}.atlas .page-meta{flex-wrap:wrap}}
+
+/* Cover and reading layouts */
+.atlas .atlas-card > img { object-position: center top; }
+
+.atlas.home-surface { background: #121b23; }
+.atlas.home-surface .atlas-header, .atlas.reading-surface .atlas-header {
+  min-height: 0;
+  padding-block: 10px;
+}
+.atlas.home-surface .wiki-sidebar, .atlas.reading-surface .wiki-sidebar { display: none; }
+.atlas.home-surface .wiki-shell, .atlas.reading-surface .wiki-shell { display: block; }
+.atlas.home-surface .wiki-shell { max-width: none; margin: 0; padding: 0; }
+.atlas.home-surface .wiki-page { padding: 0; border: 0; border-radius: 0; }
+.home-cover {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: clamp(440px, 53vw, 820px);
+  color: #f6e9d2;
+  background: #15212b;
+}
+.home-cover-art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 50% 47%, #101820a8, transparent 55%);
+}
+.home-cover-title {
+  align-self: center;
+  text-align: center;
+  padding: 36px 14px 12px;
+  text-shadow: 0 2px 8px #0b1015, 0 4px 24px #0b1015;
+}
+.home-cover-title h1 {
+  margin: 0;
+  font-size: clamp(46px, 8vw, 122px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.home-cover-title p { margin: 10px 0 0; font-size: clamp(16px, 2vw, 23px); }
+.home-cover-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 clamp(10px, 2vw, 25px);
+  width: min(850px, 100%);
+  margin-inline: auto;
+  padding: 0 12px clamp(12px, 3vw, 36px);
+}
+.home-cover-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 3px 5px;
+  font-size: clamp(15px, 1.7vw, 20px);
+  color: #fff2da;
+  text-shadow: 0 1px 3px #070d12, 0 1px 7px #070d12, 0 0 12px #070d12;
+}
+.home-cover-nav a:hover, .home-cover-nav a:focus-visible {
+  color: #ffe0a1;
+  text-shadow: 0 1px 3px #302013, 0 0 9px #ffc15c, 0 0 24px #f8a733;
+}
+.home-cover-nav [aria-current] { color: #ffd891; }
+
+.atlas.reading-surface .wiki-shell { max-width: 1080px; }
+.atlas.reading-surface .wiki-page { background: #f4eee2; }
+.atlas.reading-surface .mobile-menu { display: block; }
+.atlas.reading-surface .atlas-header a:hover { color: #ffe0a1; text-shadow: 0 0 10px #ffc15c; }
+.atlas.reading-surface .atlas-header { position: relative; }
+.atlas.reading-surface .mobile-menu summary { padding: 10px; cursor: pointer; }
+.atlas.reading-surface .mobile-menu nav {
+  position: absolute;
+  right: 16px;
+  top: 100%;
+  z-index: 35;
+  background: #1d2425;
+  padding: 8px;
+  min-width: 210px;
+  box-shadow: 0 10px 30px #0007;
+}
+.atlas.reading-surface .mobile-menu nav a { display: block; padding: 8px 12px; }
+.atlas.reading-surface .mobile-menu nav span { display: none; }
+.atlas.reading-surface .page-heading h1 { font-size: clamp(34px, 5vw, 60px); }
+.atlas.reading-surface .page-heading .page-kicker { display: none; }
+
+.character-gallery {
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 24px clamp(12px, 3vw, 30px);
+}
+.character-gallery .atlas-card, .character-gallery .atlas-card:hover {
+  display: block;
+  min-height: 0;
+  border: 0;
+  background: transparent;
+}
+.character-gallery .atlas-card > img, .character-gallery .no-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: 5 / 4;
+}
+.character-gallery .no-portrait {
+  display: grid;
+  place-items: center;
+  background: #e8dfce;
+  color: #615443;
+  font: 12px system-ui, sans-serif;
+}
+.character-gallery .atlas-card-copy { padding: 9px 0 0; gap: 5px; }
+.character-gallery .atlas-card-copy strong { order: -1; font-size: clamp(18px, 2.6vw, 25px); }
+.character-gallery .atlas-card-copy > span { font: 13px/1.45 system-ui, sans-serif; }
+.character-gallery .atlas-card-copy em { display: none; }
+.character-gallery .atlas-card:hover strong, .character-gallery .atlas-card:focus-visible strong {
+  color: #79512c;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.atlas.chronicle-surface .wiki-shell { max-width: 940px; }
+.atlas .session-actions, .atlas .session-neighbors { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.atlas .session-actions a, .atlas .session-neighbors a { padding: 8px 0; color: #775328; text-decoration: underline; text-underline-offset: 4px; }
+.atlas .session-actions a { padding-inline: 12px; border: 1px solid #a58b62; border-radius: 3px; }
+.atlas.chronicle-surface .session-index { margin: 20px 0; border-block: 1px solid #d5c6ac; }
+.atlas.chronicle-surface .session-index a { background: transparent; border-radius: 0; }
+.atlas.chronicle-surface .session-index [aria-current="step"] { color: #775328; box-shadow: inset 0 -2px #a2753c; }
+.atlas.chronicle-surface .session { margin-top: 0; border-top: 0; padding-top: 4px; }
+.atlas.chronicle-surface:not(.chronicle-ready) .session + .session { margin-top: 28px; border-top: 1px solid #d5c6ac; }
+.atlas.chronicle-surface .session .article-copy img { width: 100%; height: auto; }
+.atlas .session-neighbors { justify-content: space-between; border-top: 1px solid #d5c6ac; margin-top: 20px; }
+@media (max-width: 650px) {
+  .home-cover { min-height: 420px; }
+  .home-cover-art { object-position: center; }
+  .home-cover-nav { column-gap: 5px; }
+  .character-gallery { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+.atlas.reading-surface .header-chronicle { display: none; }
+.reading-nav { display: flex; gap: 14px; font: 13px/1.5 Arial,sans-serif; white-space: nowrap; }
+.reading-nav [aria-current] { color: #e9c58c; }
+@media (min-width: 1000px) {
+  .home-cover-nav { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 0; }
+  .home-cover-nav a { grid-column: span 3; justify-content: center; }
+  .home-cover-nav a:nth-child(9) { grid-column: 2 / span 3; }
+  .home-cover-nav a:nth-child(n+9) { translate: 16.667% 0; }
+  .home-cover-nav a:nth-child(2), .home-cover-nav a:nth-child(7) { transform: translateY(-5px); }
+  .home-cover-nav a:nth-child(4), .home-cover-nav a:nth-child(5), .home-cover-nav a:nth-child(10) { transform: translateY(6px); }
+}
+@media (max-width: 940px) {
+  .reading-nav { display: none; }
+}
+
+@media (max-width: 720px) {
+  .atlas.reading-surface .article-facts[open] { display: flow-root; }
+  .atlas.reading-surface .article-facts > img {
+    float: left;
+    width: 34%;
+    max-height: 205px;
+    margin: 0 12px 10px 0;
+    object-position: center top;
+  }
+  .atlas.reading-surface .article-facts .image-caption { clear: both; }
+}
+
+.atlas.article-surface { background-image: linear-gradient(#10182066, #101820a6), url("/maten-wiki/maten-cover.jpg"); }
+
+/* One navigation position for all wiki pages with the shared header. */
+.atlas .wiki-shell { display: block; }
+.atlas .unified-header {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) minmax(200px, 420px) minmax(max-content, 1fr);
+  gap: 10px 20px;
+  min-height: 0;
+  padding-block: 10px;
+  background: #171e24;
+}
+.atlas .unified-header .wiki-brand { justify-self: start; min-width: 0; margin: 0; }
+.atlas .unified-header .search-trigger { order: 0; width: 100%; margin: 0; }
+.section-menu { position: relative; justify-self: end; }
+.section-menu summary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border: 1px solid #a4875f;
+  list-style: none;
+  cursor: pointer;
+}
+.section-menu summary::-webkit-details-marker { display: none; }
+.section-menu summary::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: solid currentColor;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg) translateY(-2px);
+}
+.section-menu[open] summary { color: #e5bf7f; }
+.section-menu[open] summary::after { transform: rotate(225deg) translate(-2px, -1px); }
+.section-menu nav {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: min(230px, calc(100vw - 28px));
+  max-height: calc(100vh - 130px);
+  max-height: calc(100dvh - 130px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 6px;
+  background: #1b242b;
+  border: 1px solid #776346;
+  box-shadow: 0 12px 28px #0a101780;
+}
+.section-menu nav a {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 5px 10px;
+  color: #f5ead6;
+}
+.section-menu nav a:hover, .section-menu nav a:focus-visible {
+  color: #ffe3a4;
+  text-shadow: 0 0 10px #ffc15c;
+}
+.section-menu nav [aria-current] {
+  border-inline-start: 2px solid #d7af72;
+  padding-inline-start: 8px;
+  background: #d7af7221;
+  color: #e5bf7f;
+}
+@media (max-width: 620px) {
+  .atlas .unified-header { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; padding-inline: 14px; }
+  .atlas .unified-header .search-trigger { grid-row: 2; grid-column: 1 / -1; }
+  .section-menu { grid-row: 1; grid-column: 2; }
+  .section-menu nav a { min-height: 44px; }
+  .atlas:has(.unified-header) [id] { scroll-margin-top: 132px; }
+}

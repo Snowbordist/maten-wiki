@@ -13,7 +13,7 @@
 * { box-sizing: border-box; }
 html { min-width: 320px; scroll-behavior: smooth; }
 body {
-  background: linear-gradient(rgba(8, 10, 15, 0.36), rgba(8, 10, 15, 0.62)), url('/maten-wiki/maten-background.png') center top / cover fixed no-repeat, var(--night);
+  background: linear-gradient(rgba(8, 10, 15, 0.36), rgba(8, 10, 15, 0.62)), url('/maten-wiki/maten-cover.jpg') center top / cover fixed no-repeat, var(--night);
   color: var(--ink);
   font-family: Georgia, 'Times New Roman', serif;
   margin: 0;
